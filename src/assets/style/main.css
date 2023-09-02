@@ -1,0 +1,10 @@
+@import './base.css';
+
+html,
+body,
+#app {
+  box-sizing: border-box;
+  outline: none !important;
+  height: 100vh;
+  transition: color var(--el-transition-duration), background-color var(--el-transition-duration);
+}
