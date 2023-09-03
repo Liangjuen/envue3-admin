@@ -7,7 +7,7 @@ export default (router: Router) => {
         const userStore = useUserStore()
         // 未找到路由元信息跳转到 404
         if (to.matched.length === 0) {
-            router.replace('/404')
+            router.push('/404')
             return next()
         }
         // 不需要鉴权在路由直接访问

@@ -1,4 +1,3 @@
-export * from './type'
 
 // 主题配置选项
 export default {

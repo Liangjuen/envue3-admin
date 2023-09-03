@@ -1,18 +1,29 @@
 <template>
-    <header>
+    <div class="nav">
         <el-switch v-model="isDark" @change="toggleDark"></el-switch>
-        <el-switch v-model="globalStore.isCollapse" @change="changeMenuCollapse"></el-switch>
-    </header>
+        <el-switch v-model="isCollapse" @change="toggleMenuCollapse"></el-switch>
+        <el-switch v-model="themeStyle.menuBackDark" @change="toggleMenuBackMode"></el-switch>
+    </div>
 </template>
 
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import useGlobalStore from '@/stores/global'
-const globalStore = useGlobalStore()
-const changeMenuCollapse = (v: boolean) => globalStore.isCollapse = v
+import useHeader from './useHeader'
+const {
+    useGlobalStoreToRefs,
+    toggleMenuBackMode,
+    toggleMenuCollapse
+} = useHeader()
+
 // 暗黑主题切换
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const { isCollapse, themeStyle } = useGlobalStoreToRefs()
+
 </script>
 
-<style></style>
+<style>
+.nav {
+    height: var(--nav-height);
+}
+</style>

@@ -38,5 +38,9 @@ declare namespace THEME {
          *  @description 移动端时(默认当屏幕宽度小于750px)
          * */
         smallScreen: boolean
+        /**
+         *  @description 菜单背景模式为深色
+         * */
+        menuBackDark: boolean
     }
 }

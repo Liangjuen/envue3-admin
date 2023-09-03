@@ -5,11 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import SidebarMenu from './SidebarMenu.vue'
-import useGlobalStore from '@/stores/global'
-const globalStore = useGlobalStore()
-const { themeStyle } = storeToRefs(globalStore)
+import { useSideMenu } from './useSideMenu'
+const { useGlobalStoreToRefs } = useSideMenu()
+const { themeStyle } = useGlobalStoreToRefs()
 </script>
 
 <style lang="scss">
@@ -19,7 +18,6 @@ const { themeStyle } = storeToRefs(globalStore)
 }
 
 .vertical {
-    width: var(--left-menu-width);
     height: 100%;
     overflow-x: hidden;
 }

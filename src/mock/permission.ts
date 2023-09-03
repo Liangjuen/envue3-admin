@@ -3,7 +3,7 @@ const permission: Array<API.Permission> = [
         id: 'aaaaa',
         pid: '',
         title: '首页',
-        path: '/',
+        path: '/home',
         name: '',
         cache: 0,
         sort: 0,

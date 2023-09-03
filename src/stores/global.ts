@@ -14,7 +14,9 @@ export default defineStore(Names.GLOBAL, () => {
         // 标签显示
         showTabs: true,
         // 移动端时(默认当屏幕宽度小于750px)
-        smallScreen: false
+        smallScreen: false,
+        // 菜单背景模式为深色
+        menuBackDark: true,
     })
     // 菜单栏是否折起
     let isCollapse = ref(false)

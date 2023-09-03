@@ -6,3 +6,9 @@
 
 <script setup lang="ts">
 </script>
+
+<style lang="scss">
+main {
+    height: auto;
+}
+</style>
