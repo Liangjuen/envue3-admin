@@ -34,7 +34,6 @@ export const usePermissionStore = defineStore(Names.PERMISSTION, {
                 }
             }
             const routes = menus.map(mapMenu)
-            console.log(routes);
             this.routes = routes
             return routes
         }

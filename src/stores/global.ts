@@ -2,7 +2,7 @@ import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 import { Names } from './store-name'
 
-export default defineStore(Names.USER, () => {
+export default defineStore(Names.GLOBAL, () => {
     const themeStyle = reactive<THEME.Style>({
         theme: 'light',
         // 顶部(header、nav)是否固定

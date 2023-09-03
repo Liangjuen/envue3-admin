@@ -1,6 +1,6 @@
 <template>
-    <el-menu :default-active="$route.fullPath" class="el-menu-vertical-demo" :unique-opened="true" router
-        :collapse="isCollapse">
+    <el-menu :default-active="$route.fullPath" :unique-opened="true" class="dark-bg" router
+        :collapse="!globalStore.isCollapse">
         <template v-for="item in menus" :key="item._id">
             <sidebar-item :item-data="item" v-if="!item?.meta?.hidden"></sidebar-item>
         </template>
@@ -18,7 +18,16 @@ const permissionStore = usePermissionStore()
 permissionStore.getPermissions()
 permissionStore.getRoutes()
 const menus = computed(() => getMenus(permissionStore.permissions))
-const isCollapse = globalStore.isCollapse
+
 </script>
-<style scoped></style>
+<style>
+@import './dark.scss';
+
+.vertical .el-menu.el-menu--vertical {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-right: none !important;
+}
+</style>
   

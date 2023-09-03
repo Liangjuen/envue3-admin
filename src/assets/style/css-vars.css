@@ -1,0 +1,16 @@
+:root {
+    --theme-dark-bgc-color: #1e272e;
+    --theme-padding: 20px;
+    --theme-margin: 20px;
+    --left-menu-width: 216px;
+    --collapse-left-menu-width: 64px;
+    --nav-height: 48px;
+    --header-height: 64px;
+    --horizontal-menu-height: 40px;
+    --filter: 3px;
+}
+
+html.dark {
+    /* 自定义深色背景颜色 */
+    --el-bg-color: var(--theme-dark-bgc-color);
+}
