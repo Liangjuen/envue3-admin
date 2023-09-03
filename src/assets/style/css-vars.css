@@ -4,10 +4,13 @@
     --theme-margin: 20px;
     --left-menu-width: 216px;
     --collapse-left-menu-width: 64px;
-    --nav-height: 48px;
+    --tabs-wrapper-height: 48px;
     --nav-height: 64px;
     --horizontal-menu-height: 40px;
+    --footer-height: 40px;
     --filter: 3px;
+    --header-z-index: 12;
+    --side-z-index: 40;
 }
 
 html.dark {

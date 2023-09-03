@@ -8,12 +8,11 @@
   
 <script setup lang="ts">
 import SidebarItem from './SidebarItem.vue'
-import { useSideMenu } from './useSideMenu'
-const {
-    useMenus,
-    useBackDark,
-    useIsCollapse
-} = useSideMenu()
+import useSideMenu from './useSideMenu'
+import useGlobal from '@/hooks/useGlobal'
+
+const { useBackDark, useIsCollapse } = useGlobal()
+const { useMenus } = useSideMenu()
 const menus = useMenus()
 const backDark = useBackDark()
 const isCollapse = useIsCollapse()
@@ -21,9 +20,7 @@ const isCollapse = useIsCollapse()
 </script>
 <style>
 .el-menu.el-menu--vertical {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    margin-top: var(--nav-height);
     border-right: none !important;
 }
 

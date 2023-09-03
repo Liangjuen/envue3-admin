@@ -7,6 +7,6 @@ body,
 #app {
   box-sizing: border-box;
   outline: none !important;
-  background-color: var(--el-bg-color);
+  background-color: var(--el-bg-color-page);
   min-height: 100vh;
 }

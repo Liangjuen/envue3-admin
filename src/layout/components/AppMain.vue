@@ -1,14 +1,14 @@
 <template>
-    <main>
+    <section>
         <router-view></router-view>
-    </main>
+    </section>
 </template>
 
 <script setup lang="ts">
 </script>
 
 <style lang="scss">
-main {
+section {
     height: auto;
 }
 </style>

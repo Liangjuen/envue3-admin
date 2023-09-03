@@ -1,0 +1,10 @@
+.layout-header,
+.aside,
+.app-main>section,
+footer {
+    background-color: var(--el-bg-color);
+}
+
+html body #app>.app-wrapper>.main-wrapper>.app-main>section>[class*=-container] {
+    min-height: calc(100vh - 212px);
+}

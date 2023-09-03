@@ -25,5 +25,6 @@ const { isCollapse, themeStyle } = useGlobalStoreToRefs()
 <style>
 .nav {
     height: var(--nav-height);
+    padding: 0 var(--theme-padding);
 }
 </style>

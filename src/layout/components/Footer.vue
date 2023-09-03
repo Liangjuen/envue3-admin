@@ -7,4 +7,9 @@
 <script setup lang="ts">
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+footer {
+    height: var(--footer-height);
+    margin-top: 20px;
+}
+</style>
