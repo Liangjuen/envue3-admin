@@ -2,7 +2,9 @@ import type { ExtractPropTypes } from 'vue'
 
 const svgIconDefaults = {
   color: undefined,
-  size: 14
+  size: 14,
+  prefix: 'icon',
+  strokeWidth: 2,
 }
 
 export const svgIconProps = {
@@ -26,6 +28,20 @@ export const svgIconProps = {
   size: {
     type: Number
   },
+  /**
+  *  @description prefix
+  */
+  prefix: {
+    type: String,
+    default: svgIconDefaults.prefix
+  },
+  /**
+*  @description prefix
+*/
+  strokeWidth: {
+    type: Number,
+    default: svgIconDefaults.strokeWidth
+  }
 } as const
 
 export type SvgIconProps = ExtractPropTypes<typeof svgIconProps>

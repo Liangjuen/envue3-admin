@@ -4,6 +4,7 @@ import './assets/style/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginLasting from 'pinia-plugin-lasting'
+import 'virtual:svg-icons-register'
 
 import App from './App.vue'
 import router from './router'

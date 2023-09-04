@@ -1,23 +1,28 @@
 <template>
-    <SvgIcon :icon="icon" :style="{ fontSize }" :color="color">
-    </SvgIcon>
+    <svg aria-hidden="true" class="svg-icon" :stroke-width="strokeWidth" :width="size ? size : '1em'"
+        :height="size ? size : '1em'" stroke-linecap="round" stroke-linejoin="round">
+        <use :href="symbolId" :stroke-width="strokeWidth" />
+    </svg>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Icon as SvgIcon } from '@iconify/vue'
 import { svgIconProps } from './svgIcon'
 const props = defineProps(svgIconProps)
+
 defineOptions({
     name: ' SvgIcon'
 })
 
-const fontSize = computed(() => {
-    let fSize = '1em'
-    const size = props.size
-    if (size) {
-        fSize = (size < 12 ? '12px' : (size > 42 ? '42px' : size + 'px'))
-    }
-    return fSize
-})
+const symbolId = computed(() => `#${props.prefix}-${props.icon}`)
 </script>
+
+<style>
+.svg-icon {
+    fill: none;
+    stroke: currentColor;
+    overflow: hidden;
+    outline: none;
+    transition: stroke var(--transation);
+}
+</style>
