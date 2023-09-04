@@ -25,7 +25,7 @@ const { useMainWrapperClass } = useGlobalStore()
 const mainclass = useMainWrapperClass()
 </script>
 <style>
-@import './style//index.scss';
+@import './style/index.scss';
 
 .app-wrapper {
     width: 100vw;

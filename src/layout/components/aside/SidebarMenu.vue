@@ -28,5 +28,9 @@ const isCollapse = useIsCollapse()
     width: var(--left-menu-width);
     min-height: 400px;
 }
+
+.el-sub-menu__title {
+    transition: none;
+}
 </style>
   

@@ -3,6 +3,7 @@
         <el-switch v-model="isDark" @change="toggleDark"></el-switch>
         <el-switch v-model="isCollapse" @change="toggleMenuCollapse"></el-switch>
         <el-switch v-model="themeStyle.menuBackDark" @change="toggleMenuBackMode"></el-switch>
+        <svg-icon icon="bx:bx-home"></svg-icon>
     </div>
 </template>
 
