@@ -1,9 +1,9 @@
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { Names } from './store-name'
 
 export default defineStore(Names.GLOBAL, () => {
-    const themeStyle = reactive<THEME.Style>({
+    const themeStyle = ref<THEME.Style>({
         theme: 'light',
         // 顶部(header、nav)是否固定
         topFixed: true,
@@ -13,15 +13,13 @@ export default defineStore(Names.GLOBAL, () => {
         colorMode: 'blue-black',
         // 标签显示
         showTabs: true,
-        // 移动端时(默认当屏幕宽度小于750px)
+        // 移动端时(默认当屏幕宽度小于980px)
         smallScreen: false,
         // 菜单背景模式为深色
         menuBackDark: true,
     })
     // 菜单栏是否折起
     let isCollapse = ref(false)
-    // 菜单栏抽屉形态是否为浮窗
-    let asideFloat = ref(false)
     // 全局资源搜索
     let showSearch = ref(false)
     // 重新加载应用
@@ -29,15 +27,23 @@ export default defineStore(Names.GLOBAL, () => {
     // 控制加载动画
     let loading = ref(false)
     // 主题配置
-    let showSetup = ref(false)
+    let showSettings = ref(false)
 
     return {
         themeStyle,
         isCollapse,
-        asideFloat,
         showSearch,
         reload,
         loading,
-        showSetup
+        showSettings
+    }
+}, {
+    lasting: {
+        enabled: true,
+        strategies: {
+            storage: sessionStorage,
+            key: Names.GLOBAL,
+            exclude: []
+        }
     }
 })

@@ -1,5 +1,5 @@
 <template>
-    <div class="app-wrapper">
+    <div class="app-wrapper" ref="appWrapperRef">
         <Aside />
         <div :class="['main-wrapper', mainclass]">
             <div class="layout-header fixed">
@@ -11,17 +11,25 @@
                 <Footer />
             </div>
         </div>
+        <SetOptDrawer />
     </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import AppMain from './components/AppMain.vue'
 import Aside from './components/aside/index.vue'
 import Nav from './components/nav/index.vue'
 import Footer from './components/Footer.vue'
 import Tabs from './components/tabs/index.vue'
+import SetOptDrawer from './components/setOptDrawer/index.vue'
 import { useGlobalStore } from './use'
-const { useMainWrapperClass } = useGlobalStore()
+import { useResizeObserver } from '@vueuse/core'
+
+const appWrapperRef = ref<HTMLDivElement>()
+
+const { useMainWrapperClass, useOnWrapperResize } = useGlobalStore()
+useResizeObserver(appWrapperRef, (entries) => useOnWrapperResize(entries as ResizeObserverEntry[]))
 const mainclass = useMainWrapperClass()
 </script>
 <style>
