@@ -4,7 +4,7 @@ import useStore from '@/stores/global'
 
 export const useGlobalStore = () => {
     const globalStore = useStore()
-    const { isCollapse, themeStyle } = storeToRefs(globalStore)
+    const { isCollapse, themeStyle, asideFloat } = storeToRefs(globalStore)
 
     const useMainWrapperClass = () => computed(() => {
         if (themeStyle.value.menuMode === 'horizontal' || themeStyle.value.smallScreen) return 'menu-is-hid-main'
@@ -31,10 +31,14 @@ export const useGlobalStore = () => {
         // 当菜单栏为纵向时
         if (themeStyle.value.menuMode === 'vertical') {
             // 默认当视口尺寸小于 1080 时: 菜单悬浮、 小于 1440 时: 折叠、 大于 1440 时: 展开  (可自由修改)
-            if (width < 1280) {
+            if (width < 1280 && width > 980) {
                 isCollapse.value = true
+                asideFloat.value = false
+            } else if (width <= 980) {
+                asideFloat.value = true
             } else {
                 isCollapse.value = false
+                asideFloat.value = false
             }
         }
     }

@@ -16,10 +16,12 @@ export default defineStore(Names.GLOBAL, () => {
         // 移动端时(默认当屏幕宽度小于980px)
         smallScreen: false,
         // 菜单背景模式为深色
-        menuBackDark: true,
+        menuBackDark: false,
     })
     // 菜单栏是否折起
     let isCollapse = ref(false)
+    // 菜单栏抽屉形态是否悬浮
+    let asideFloat = ref(true)
     // 全局资源搜索
     let showSearch = ref(false)
     // 重新加载应用
@@ -35,7 +37,8 @@ export default defineStore(Names.GLOBAL, () => {
         showSearch,
         reload,
         loading,
-        showSettings
+        showSettings,
+        asideFloat
     }
 }, {
     lasting: {

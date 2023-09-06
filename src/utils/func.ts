@@ -1,10 +1,4 @@
-export const toBoolean = (arg: any) => {
-    const type = typeof arg
-    if (type == 'string') {
-        return !!Number(arg)
-    } else if (type == 'number') {
-        return !!arg
-    } else {
-        return false
-    }
-}
+export const isUndefined = (val: any): val is undefined => val === undefined
+export const isBoolean = (val: any): val is boolean => typeof val === 'boolean'
+export const isNumber = (val: any): val is number => typeof val === 'number'
+

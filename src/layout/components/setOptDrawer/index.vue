@@ -3,6 +3,9 @@
         <SetItem label="暗黑模式">
             <Theme />
         </SetItem>
+        <SetItem label="菜单深色">
+            <el-switch v-model="themeStyle.menuBackDark" @change="change"></el-switch>
+        </SetItem>
     </el-drawer>
 </template>
 
@@ -11,5 +14,7 @@ import SetItem from './SetItem.vue'
 import Theme from '../Theme.vue'
 import useGlobalStore from '@/hooks/useGlobal'
 
-const { showSettings } = useGlobalStore().useGlobalStoreToRefs()
+const { showSettings, themeStyle } = useGlobalStore().useGlobalStoreToRefs()
+
+const change = (v: boolean) => themeStyle.value.menuBackDark = v
 </script>

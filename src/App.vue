@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider>
+  <el-config-provider :zIndex="2000">
     <router-view></router-view>
   </el-config-provider>
 </template>

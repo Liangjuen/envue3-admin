@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs">发顺丰</div>
+    <div class="tabs"></div>
 </template>
 
 <Style lang="scss">

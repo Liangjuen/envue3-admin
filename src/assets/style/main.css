@@ -1,6 +1,8 @@
 @import './normalize.css';
 @import './css-vars.css';
 @import './animation.css';
+@import './element-plus.css';
+@import './global.scss';
 
 html,
 body,

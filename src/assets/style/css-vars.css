@@ -2,7 +2,7 @@
     --theme-dark-bgc-color: #1e272e;
     --theme-padding: 20px;
     --theme-margin: 20px;
-    --left-menu-width: 216px;
+    --left-menu-width: 256px;
     --collapse-left-menu-width: 64px;
     --tabs-wrapper-height: 48px;
     --nav-height: 64px;
@@ -11,6 +11,7 @@
     --filter: 3px;
     --header-z-index: 12;
     --side-z-index: 40;
+    --border: 1px solid var(--el-border-color);
 }
 
 html.dark {

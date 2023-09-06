@@ -124,7 +124,63 @@ const permission: Array<API.Permission> = [
         hidden: 0,
         permission: 'sys:sysMenage:menu:edit',
         component: ''
-    }
+    },
+    {
+        id: 'mmmmm',
+        pid: '',
+        title: '组件',
+        path: '/components',
+        name: '',
+        cache: 0,
+        sort: 0,
+        icon: 'codesandbox',
+        type: 1,
+        hidden: 0,
+        permission: 'sys:components',
+        component: ''
+    },
+    {
+        id: 'mmmm1',
+        pid: 'mmmmm',
+        title: '图标',
+        path: '/components/icons',
+        name: '',
+        cache: 0,
+        sort: 0,
+        icon: 'image',
+        type: 1,
+        hidden: 0,
+        permission: 'sys:components:icons',
+        component: ''
+    },
+    {
+        id: 'mmm11',
+        pid: 'mmmm1',
+        title: '图标集合',
+        path: '/components/icons/list',
+        name: '',
+        cache: 0,
+        sort: 0,
+        icon: '',
+        type: 2,
+        hidden: 0,
+        permission: 'sys:components:icons::list',
+        component: '/components/icon/list'
+    },
+    {
+        id: 'mmm12',
+        pid: 'mmmm1',
+        title: '选择器',
+        path: '/components/icons/selector',
+        name: '',
+        cache: 0,
+        sort: 0,
+        icon: '',
+        type: 2,
+        hidden: 0,
+        permission: 'sys:components:icons::list',
+        component: '/components/icon/selector'
+    },
 ]
 export const getRolePermission = () => permission
 

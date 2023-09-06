@@ -42,7 +42,7 @@ const mainclass = useMainWrapperClass()
 
 .main-wrapper {
     height: 100%;
-    transition: margin-left var(--transation);
+    transition: margin-left var(--el-transition-duration);
     width: auto;
     overflow-y: auto;
 }
@@ -61,7 +61,6 @@ const mainclass = useMainWrapperClass()
     right: 0;
     box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
     z-index: var(--header-z-index);
-    border-radius: 0 0 8px 8px;
 }
 
 .fixed {
