@@ -1,4 +1,6 @@
 import 'element-plus/theme-chalk/dark/css-vars.css'
+// 解决 el-message 组件样式丢失问题
+import 'element-plus/theme-chalk/src/message.scss'
 import './assets/style/main.css'
 
 import { createApp } from 'vue'

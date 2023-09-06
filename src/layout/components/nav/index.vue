@@ -38,7 +38,7 @@ import { ElMessage } from 'element-plus'
 const { useGlobalStoreToRefs } = useGlobal()
 const { isCollapse } = useGlobalStoreToRefs()
 const activeClass = computed(() => !isCollapse.value ? 'is-active' : '')
-const toggleLanguage = () => ElMessage({ message: '暂未实现，敬请期待', type: 'info', duration: 30000 })
+const toggleLanguage = () => ElMessage({ message: '暂未实现，敬请期待', type: 'info' })
 </script>
 
 <style lang="scss">
