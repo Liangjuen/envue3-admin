@@ -23,6 +23,6 @@ const symbolId = computed(() => `#${props.prefix}-${props.icon}`)
     stroke: currentColor;
     overflow: hidden;
     outline: none;
-    transition: stroke var(--transation);
+    transition: stroke var(--animate-duration);
 }
 </style>

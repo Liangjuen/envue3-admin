@@ -1,3 +1,76 @@
 :root {
-    --transation: .3s;
+    --animate-duration: 350ms;
+    --animate-delay: 0.9s;
+    --animation-timing-function: ease-out;
+    --el-transition-duration: var(--animate-duration);
+}
+
+/* 从右淡入 */
+.fade-in-right-enter-from {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.fade-in-right-leave-to {
+    opacity: 0;
+    transform: translateX(-60px);
+}
+
+.fade-in-right-enter-active,
+.fade-in-right-leave-active {
+    transition: transform var(--animate-duration) var(--animation-timing-function), opacity var(--animate-duration) var(--animation-timing-function);
+}
+
+/* 从左淡入 */
+.fade-in-left-enter-from {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.fade-in-left-leave-to {
+    opacity: 0;
+    transform: translateX(-60px);
+}
+
+.fade-in-left-enter-active,
+.fade-in-left-leave-active {
+    transition: transform var(--animate-duration) var(--animation-timing-function), opacity var(--animate-duration) var(--animation-timing-function);
+}
+
+/* 中轴收缩 */
+.zoom-in-center-enter-active {
+    animation: zoom-in-center var(--animate-duration);
+}
+
+.zoom-in-center-leave-active {
+    animation: zoom-in-center var(--animate-duration) reverse;
+}
+
+@keyframes zoom-in-center {
+    0% {
+        transform: scalex(0);
+    }
+
+    100% {
+        transform: scalex(1);
+    }
+}
+
+/* 中轴收缩 */
+.zoom-in-center-enter-active {
+    animation: zoom-in-center var(--animate-duration);
+}
+
+.zoom-in-center-leave-active {
+    animation: zoom-in-center var(--animate-duration) reverse;
+}
+
+@keyframes zoom-in-center {
+    0% {
+        transform: scalex(0);
+    }
+
+    100% {
+        transform: scalex(1);
+    }
 }
