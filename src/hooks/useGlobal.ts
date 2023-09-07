@@ -14,6 +14,8 @@ export default () => {
         'text-color': "#fff"
     } : {}))
 
+    const useNavIsDark = () => computed(() => (globalStore.themeStyle.menuBackDark && globalStore.themeStyle.menuMode == 'horizontal'))
+
     const useSideBackDark = () => computed(() => globalStore.themeStyle.menuBackDark ? 'dark' : '')
     const changeSetDrawer = (v: boolean) => showSettings.value = v
 
@@ -21,7 +23,8 @@ export default () => {
         useBackDark,
         useGlobalStoreToRefs,
         useSideBackDark,
-        changeSetDrawer
+        changeSetDrawer,
+        useNavIsDark
     }
 }
 

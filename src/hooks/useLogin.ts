@@ -7,6 +7,6 @@ export const useUserLogin = () => {
         userStore.token = 'token'
         const permissionStore = usePermissionStore()
         permissionStore.getPermissions()
-        permissionStore.getRoutes()
+        // permissionStore.getRoutes()
     }
 }
