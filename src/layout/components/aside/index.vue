@@ -1,6 +1,6 @@
 <template>
     <div :class="['aside', themeStyle.menuMode, dark]" :style="{ 'z-index': 2000 }">
-        <div class="sidebar-top">
+        <div :class="themeStyle.menuMode == 'vertical' ? 'sidebar-top' : ''">
             <slot>
                 <div class="sys-name">Admin</div>
             </slot>
@@ -9,7 +9,8 @@
             <sidebar-menu />
         </el-scrollbar>
     </div>
-    <div v-show="!isCollapse && asideFloat" class="el-overlay" :style="{ 'z-index': 1997 }" @click="isCollapse = true">
+    <div v-if="themeStyle.menuMode == 'vertical'" v-show="!isCollapse && asideFloat" class="el-overlay"
+        :style="{ 'z-index': 1997 }" @click="isCollapse = true">
     </div>
 </template>
 
@@ -24,8 +25,6 @@ const dark = useSideBackDark()
 
 <style lang="scss">
 .aside {
-    position: absolute;
-
     .sidebar-top {
         color: var(--el-text-color-);
         height: var(--nav-height);
@@ -39,6 +38,10 @@ const dark = useSideBackDark()
             align-items: center;
             font-weight: bold;
         }
+    }
+
+    .sidebar-wrapper {
+        width: 100%;
     }
 }
 
@@ -59,9 +62,24 @@ const dark = useSideBackDark()
 
 .horizontal {
     width: 100%;
-}
+    height: 100%;
+    display: flex;
+    align-items: center;
 
-.el-scrollbar {
+    .sys-name {
+        margin-right: 20px;
+    }
+
+    .el-menu--horizontal.el-menu {
+        border-bottom: none !important;
+        width: 100%;
+        height: var(--nav-height);
+    }
+}
+</style>
+
+<style scoped>
+.vertical .el-scrollbar {
     margin-top: var(--nav-height);
     height: calc(100% - var(--nav-height));
     z-index: 1997;

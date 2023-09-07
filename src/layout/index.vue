@@ -1,16 +1,20 @@
 <template>
     <div class="app-wrapper" ref="appWrapperRef">
-        <Aside />
-        <div :class="['main-wrapper', mainclass]">
+        <Aside v-if="themeStyle.menuMode == 'vertical'" />
+        <el-scrollbar :class="['main-wrapper', mainclass]">
             <div class="layout-header fixed">
-                <Nav />
+                <Nav>
+                    <template #left>
+                        <Aside v-if="themeStyle.menuMode == 'horizontal'" />
+                    </template>
+                </Nav>
                 <Tabs />
             </div>
             <div class="app-main">
                 <AppMain />
                 <Footer />
             </div>
-        </div>
+        </el-scrollbar>
         <SetOptDrawer />
     </div>
 </template>
@@ -25,7 +29,9 @@ import Tabs from './components/tabs/index.vue'
 import SetOptDrawer from './components/setOptDrawer/index.vue'
 import { useGlobalStore } from './use'
 import { useResizeObserver } from '@vueuse/core'
-
+import useGlobal from '@/hooks/useGlobal'
+const { useGlobalStoreToRefs } = useGlobal()
+const { themeStyle } = useGlobalStoreToRefs()
 const appWrapperRef = ref<HTMLDivElement>()
 
 const { useMainWrapperClass, useOnWrapperResize } = useGlobalStore()

@@ -1,7 +1,9 @@
 <template>
     <div class="set-item">
         <div class="label">{{ label }}</div>
-        <slot></slot>
+        <div class="item">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -24,6 +26,10 @@ defineProps<{
         font-size: 14px;
         flex: 1;
         margin-right: 10px;
+    }
+
+    .item {
+        max-width: 160px;
     }
 }
 </style>

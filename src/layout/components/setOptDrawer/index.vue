@@ -6,6 +6,12 @@
         <SetItem label="菜单深色">
             <el-switch v-model="themeStyle.menuBackDark" @change="change"></el-switch>
         </SetItem>
+        <SetItem label="菜单模式">
+            <el-select v-model="themeStyle.menuMode" :disabled="themeStyle.smallScreen">
+                <el-option label="纵向" value="vertical"></el-option>
+                <el-option label="横向" value="horizontal"></el-option>
+            </el-select>
+        </SetItem>
     </el-drawer>
 </template>
 

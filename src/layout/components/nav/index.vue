@@ -1,7 +1,7 @@
 <template>
-    <div class="nav">
+    <div class="nav" :class="navBgcIsDark ? 'menu-mode-horizontal-bg-dark-nav' : ''">
         <el-row align="middle" justify="space-between">
-            <el-col :xs="16" :sm="14" :md="14" :lg="14" :xl="16">
+            <el-col class="top-left" :xs="8" :sm="18" :md="18" :lg="20" :xl="20">
                 <slot name="left">
                     <button class="navbar-ham" @click="isCollapse = !isCollapse">
                         <span class="ham-container">
@@ -12,10 +12,10 @@
                     </button>
                 </slot>
             </el-col>
-            <el-col class="top-right" :xs="4" :sm="6" :md="6" :lg="6" :xl="4">
+            <el-col class="top-right" :xs="6" :sm="6" :md="4" :lg="4" :xl="4">
                 <slot name="right">
                     <div class="right-tools">
-                        <Theme class="ml-12" />
+                        <Theme />
                         <div class="ml-12" @click="toggleLanguage">
                             <svg-icon icon="Language"></svg-icon>
                         </div>
@@ -35,9 +35,10 @@ import FullScreen from '@/components/FullScreen/index.vue'
 import useGlobal from '@/hooks/useGlobal'
 import { computed } from 'vue'
 import { ElMessage } from 'element-plus'
-const { useGlobalStoreToRefs } = useGlobal()
+const { useGlobalStoreToRefs, useNavIsDark } = useGlobal()
 const { isCollapse } = useGlobalStoreToRefs()
 const activeClass = computed(() => !isCollapse.value ? 'is-active' : '')
+const navBgcIsDark = useNavIsDark()
 const toggleLanguage = () => ElMessage({ message: '暂未实现，敬请期待', type: 'info' })
 </script>
 
@@ -109,18 +110,27 @@ const toggleLanguage = () => ElMessage({ message: '暂未实现，敬请期待',
     height: 100%;
 }
 
+.top-left {
+    height: 100%;
+}
+
 .top-right {
-    min-width: 160px;
     display: flex;
     justify-content: flex-end;
 
     .right-tools {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
 
         >div {
             cursor: pointer;
         }
     }
+}
+
+.menu-mode-horizontal-bg-dark-nav {
+    background-color: var(--theme-dark-bgc-color);
+    color: #fff;
 }
 </style>

@@ -4,9 +4,6 @@ import { usePermissionStore } from '@/stores/permission'
 
 export default () => {
     const permissionStore = usePermissionStore()
-    permissionStore.getPermissions()
-    permissionStore.getRoutes()
-
     const useMenus = () => computed(() => getMenus(permissionStore.permissions))
 
     return {

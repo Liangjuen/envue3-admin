@@ -4,6 +4,8 @@ footer {
     background-color: var(--el-bg-color);
 }
 
-html body #app>.app-wrapper>.main-wrapper>.app-main>section>[class*=-container] {
+html body #app>.app-wrapper>.main-wrapper .app-main>section>[class*=-container] {
     min-height: calc(100vh - 212px);
+    background-color: var(--el-bg-color);
+    border-radius: var(--theme-border-radius);
 }

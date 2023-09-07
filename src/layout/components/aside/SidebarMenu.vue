@@ -1,5 +1,6 @@
 <template>
-    <el-menu :class="[menuClass]" :default-active="$route.fullPath" router :collapse="isCollapse" v-bind="backDark">
+    <el-menu :class="[menuClass]" :mode="themeStyle.menuMode" :default-active="$route.fullPath" router
+        :collapse="isCollapse" v-bind="backDark">
         <template v-for="item in menus" :key="item.path">
             <sidebar-item :item-data="item" v-if="!item?.meta?.hidden"></sidebar-item>
         </template>
@@ -16,7 +17,7 @@ const { useBackDark, useGlobalStoreToRefs } = useGlobal()
 const { useMenus } = useSideMenu()
 const menus = useMenus()
 const backDark = useBackDark()
-const { isCollapse, asideFloat } = useGlobalStoreToRefs()
+const { isCollapse, asideFloat, themeStyle } = useGlobalStoreToRefs()
 const menuClass = computed(() => asideFloat.value && isCollapse.value ? 'closed-menu' : '')
 </script>
 <style>
@@ -32,6 +33,10 @@ const menuClass = computed(() => asideFloat.value && isCollapse.value ? 'closed-
 
 .el-sub-menu__title {
     transition: none;
+}
+
+.el-menu.el-menu--collapse .el-sub-menu__title.el-tooltip__trigger.el-tooltip__trigger {
+    padding: 0 var(--el-menu-base-level-padding) !important;
 }
 
 .closed-menu {

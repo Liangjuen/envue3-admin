@@ -7,7 +7,7 @@ export const useGlobalStore = () => {
     const { isCollapse, themeStyle, asideFloat } = storeToRefs(globalStore)
 
     const useMainWrapperClass = () => computed(() => {
-        if (themeStyle.value.menuMode === 'horizontal' || themeStyle.value.smallScreen) return 'menu-is-hid-main'
+        if (themeStyle.value.menuMode === 'horizontal' || themeStyle.value.smallScreen) return ''
         if (isCollapse.value) return 'menu-is-collapse-main'
         if (!isCollapse.value) return 'menu-is-opened-main'
         return ''
