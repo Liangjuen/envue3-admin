@@ -16,6 +16,7 @@ declare namespace API {
     export interface Menu {
         path: string
         name: string
+        redirect?: string
         meta: MenuMeta,
         component: string,
         children?: Menu[]

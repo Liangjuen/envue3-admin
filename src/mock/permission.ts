@@ -4,70 +4,71 @@ const permission: Array<API.Permission> = [
         pid: '',
         title: '首页',
         path: '/home',
-        name: '',
+        name: 'Home',
         cache: 0,
         sort: 0,
         icon: 'home',
         type: 2,
         hidden: 0,
         permission: 'sys:home',
-        component: '/home'
+        component: 'home'
     },
     {
         id: 'abcde',
         pid: '',
         title: '系统管理',
         path: '/sysManage',
-        name: '',
+        name: 'SysManage',
+        redirect: '/sysManage/menuManage',
         cache: 0,
         sort: 0,
         icon: 'settings',
         type: 1,
         hidden: 0,
-        permission: 'sys:sysMenage',
+        permission: 'sys:sysManage',
         component: ''
     },
     {
         id: 'bcde1',
         pid: 'abcde',
         title: '菜单管理',
-        path: '/sysManage/menuMenage',
-        name: 'menuMenage',
+        path: '/sysManage/menuManage',
+        name: 'MenuManage',
         cache: 1,
         sort: 1,
         icon: 'menu',
         type: 2,
         hidden: 0,
-        permission: 'sys:sysMenage:menu',
-        component: '/sysmanage/menuMenage'
+        permission: 'sys:sysManage:menu',
+        component: 'sysmanage/menuManage'
     },
     {
         id: 'bcde2',
         pid: 'abcde',
         title: '角色管理',
-        path: '/sysManage/roleMenage',
-        name: 'roleMenage',
+        path: '/sysManage/roleManage',
+        name: 'RoleManage',
         cache: 1,
         sort: 1,
         icon: 'user-check',
         type: 2,
         hidden: 0,
         permission: 'sys:sysMenage:role',
-        component: '/sysmanage/roleMenage'
+        component: 'sysmanage/roleManage'
     },
     {
         id: 'bcde3',
         pid: 'abcde',
         title: '员工管理',
-        path: '/sysManage/staffMenage',
-        name: 'staffMenage',
+        path: '/sysManage/staffManage',
+        name: 'StaffManage',
         cache: 1,
         sort: 1,
         icon: 'users',
         type: 2,
         hidden: 0,
         permission: 'sys:sysMenage:staff',
-        component: '/sysmanage/staffMenage'
+        component: 'sysmanage/staffManage'
     },
     {
         id: 'cdef1',
@@ -80,7 +81,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysMenage:menu:view',
+        permission: 'sys:sysManage:menu:view',
         component: ''
     },
     {
@@ -94,7 +95,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysMenage:menu:add',
+        permission: 'sys:sysManage:menu:add',
         component: ''
     },
     {
@@ -108,7 +109,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysMenage:menu:delete',
+        permission: 'sys:sysManage:menu:delete',
         component: ''
     },
     {
@@ -122,7 +123,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysMenage:menu:edit',
+        permission: 'sys:sysManage:menu:edit',
         component: ''
     },
     {
@@ -130,7 +131,8 @@ const permission: Array<API.Permission> = [
         pid: '',
         title: '组件',
         path: '/components',
-        name: '',
+        name: 'Components',
+        redirect: '/components/icons',
         cache: 0,
         sort: 0,
         icon: 'codesandbox',
@@ -144,7 +146,8 @@ const permission: Array<API.Permission> = [
         pid: 'mmmmm',
         title: '图标',
         path: '/components/icons',
-        name: '',
+        name: 'ComponentsIcons',
+        redirect: '/components/icons/list',
         cache: 0,
         sort: 0,
         icon: 'image',
@@ -158,28 +161,28 @@ const permission: Array<API.Permission> = [
         pid: 'mmmm1',
         title: '图标集合',
         path: '/components/icons/list',
-        name: '',
+        name: 'IconList',
         cache: 0,
         sort: 0,
         icon: '',
         type: 2,
         hidden: 0,
         permission: 'sys:components:icons::list',
-        component: '/components/icon/list'
+        component: 'components/icon/list'
     },
     {
         id: 'mmm12',
         pid: 'mmmm1',
         title: '选择器',
         path: '/components/icons/selector',
-        name: '',
+        name: 'IconSelector',
         cache: 0,
         sort: 0,
         icon: '',
         type: 2,
         hidden: 0,
         permission: 'sys:components:icons::list',
-        component: '/components/icon/selector'
+        component: 'components/icon/selector'
     },
 ]
 export const getRolePermission = () => permission

@@ -20,6 +20,7 @@ export const getMenus = (rolePermiss: Array<API.RolePermiss> = []) => {
             path,
             name,
             title,
+            redirect,
             icon,
             cache,
             sort,
@@ -31,6 +32,7 @@ export const getMenus = (rolePermiss: Array<API.RolePermiss> = []) => {
         const route: API.Menu = {
             path,
             name,
+            redirect,
             meta: {
                 type,
                 title,

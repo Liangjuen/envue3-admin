@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { Names } from './store-name'
 import { getRolePermission } from '@/mock/permission'
 import { rolePermissionToTree, getMenus } from '@/utils'
-import Layout from '@/layout/index.vue'
+import PageLayout from '@/components/Page/index.vue'
 
 //双星号是递归解释器遍历文件和文件夹的占位符或指令。它是一个简单的递归通配符，而只有一个星号表示全部没有递归
 const modules = import.meta.glob('../views/**/**.vue')
@@ -20,20 +20,21 @@ export const usePermissionStore = defineStore(Names.PERMISSTION, {
         },
         getRoutes() {
             const permissions = getRolePermission()
-            // 过滤出按钮权限
+            // 过滤出按钮权限(第一层级)
             const list = permissions.filter(item => item.type !== 3)
             const menus = getMenus(rolePermissionToTree(list))
             const mapMenu = (menu: API.Menu): RouteRecordRaw => {
-                const { path, name, component, children, meta, } = menu
+                const { path, name, component, children, meta, redirect } = menu
                 return {
                     path,
                     name,
+                    redirect: redirect ? redirect : undefined,
                     meta: { ...meta, requiresAuth: true },
-                    component: component ? (() => import(`@/views/${component}/index.vue`)) : Layout,
-                    children: children?.map(mapMenu)
+                    component: component ? modules[`../views/${component}/index.vue`] : PageLayout,
+                    children: children?.map(mapMenu).filter(item => item.meta?.type !== 3) || []
                 }
             }
-            const routes = menus.map(mapMenu)
+            const routes = menus.map(mapMenu).filter(item => item.meta?.type !== 3)
             this.routes = routes
             return routes
         }
@@ -43,7 +44,7 @@ export const usePermissionStore = defineStore(Names.PERMISSTION, {
         strategies: {
             storage: localStorage,
             key: Names.PERMISSTION,
-            exclude: []
+            exclude: ['routes']
         }
     }
 })

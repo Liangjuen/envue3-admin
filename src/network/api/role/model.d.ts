@@ -5,6 +5,7 @@ declare namespace API {
         type: 1 | 2 | 3
         path: string
         name: string
+        redirect?: string
         permission: string
         component: string | null
         title: string
