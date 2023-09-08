@@ -3,5 +3,6 @@ export const enum Names {
     USER = 'USER',
     COUNTER = 'COUNTER',
     PERMISSTION = 'PERMISSTION',
-    GLOBAL = 'GLOBAL'
+    GLOBAL = 'GLOBAL',
+    TABS = 'TABS'
 }

@@ -134,7 +134,7 @@ td {
 /* custom */
 a {
   outline: none;
-  color: #16418a;
+  color: var(--el-primary-color);
   text-decoration: none;
   -webkit-backface-visibility: hidden;
 }

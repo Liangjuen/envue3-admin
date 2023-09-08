@@ -3,15 +3,15 @@ const permission: Array<API.Permission> = [
         id: 'aaaaa',
         pid: '',
         title: '首页',
-        path: '/home',
-        name: 'Home',
+        path: '/index',
+        name: 'Index',
         cache: 0,
         sort: 0,
         icon: 'home',
         type: 2,
         hidden: 0,
-        permission: 'sys:home',
-        component: 'home'
+        permission: 'sys:index',
+        component: 'index'
     },
     {
         id: 'abcde',

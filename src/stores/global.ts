@@ -8,7 +8,7 @@ export default defineStore(Names.GLOBAL, () => {
         // 顶部(header、nav)是否固定
         topFixed: true,
         // 菜单模式 [vertical, horizontal]
-        menuMode: 'horizontal',
+        menuMode: 'vertical',
         // 主题颜色
         colorMode: 'blue-black',
         // 标签显示

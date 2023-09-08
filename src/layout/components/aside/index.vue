@@ -9,7 +9,7 @@
             <sidebar-menu />
         </el-scrollbar>
     </div>
-    <div v-if="themeStyle.menuMode == 'vertical'" v-show="!isCollapse && asideFloat" class="el-overlay"
+    <div v-show="!isCollapse && asideFloat && themeStyle.menuMode !== 'horizontal'" class="el-overlay"
         :style="{ 'z-index': 1997 }" @click="isCollapse = true">
     </div>
 </template>
