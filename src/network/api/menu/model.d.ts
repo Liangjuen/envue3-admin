@@ -4,20 +4,18 @@ declare namespace API {
      */
     export type MenuType = 1 | 2 | 3
 
-    export interface MenuMeta {
+    export interface Menu {
+        id: string
+        pid: string | null
+        path: string
+        name: string
+        redirect?: string
         type: MenuType
         title: string
         icon: string
         sort: number | null
         hidden: 0 | 1
         cache: 0 | 1
-    }
-
-    export interface Menu {
-        path: string
-        name: string
-        redirect?: string
-        meta: MenuMeta,
         component: string,
         children?: Menu[]
     }

@@ -20,6 +20,7 @@ export const usePermissionStore = defineStore(Names.PERMISSTION, {
             // 将所有按钮权限过滤处理存储为 ['x:y'] 格式 x 为页面唯一标识，y为控制点(按钮权限)
             this.points = permissions.filter(i => i.type == 3).map(p => p.permission)
             this.permissions = rolePermissionToTree(permissions)
+            return rolePermissionToTree(permissions)
         },
         getRoutes() {
             const permissions = getRolePermission()
@@ -27,12 +28,32 @@ export const usePermissionStore = defineStore(Names.PERMISSTION, {
             const list = permissions.filter(item => item.type !== 3)
             const menus = getMenus(rolePermissionToTree(list))
             const mapMenu = (menu: API.Menu): RouteRecordRaw => {
-                const { path, name, component, children, meta, redirect } = menu
+                const {
+                    path,
+                    name,
+                    component,
+                    children,
+                    type,
+                    title,
+                    icon,
+                    sort,
+                    hidden,
+                    cache,
+                    redirect
+                } = menu
                 return {
                     path,
                     name,
                     redirect: redirect ? redirect : undefined,
-                    meta: { ...meta, requiresAuth: true },
+                    meta: {
+                        type,
+                        title,
+                        icon,
+                        sort,
+                        hidden,
+                        cache,
+                        requiresAuth: true
+                    },
                     component: component ? modules[`../views/${component}/index.vue`] : PageLayout,
                     children: children?.map(mapMenu).filter(item => item.meta?.type !== 3) || []
                 }

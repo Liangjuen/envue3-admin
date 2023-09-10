@@ -17,6 +17,8 @@ export const rolePermissionToTree = (permissions: Array<API.Permission> = []) =>
 export const getMenus = (rolePermiss: Array<API.RolePermiss> = []) => {
     const mapPermissions = (item: API.RolePermiss) => {
         const {
+            id,
+            pid,
             path,
             name,
             title,
@@ -30,23 +32,25 @@ export const getMenus = (rolePermiss: Array<API.RolePermiss> = []) => {
             type
         } = item
         const route: API.Menu = {
+            id,
+            pid,
             path,
             name,
             redirect,
-            meta: {
-                type,
-                title,
-                icon,
-                cache,
-                sort,
-                hidden
-            },
+            type,
+            title,
+            icon,
+            cache,
+            sort,
+            hidden,
             component: component ? component : '',
-            children: children ? children.map(mapPermissions) : undefined
+        }
+        if (children && children.length) {
+            route.children = children.filter(i => i.type !== 3).map(mapPermissions)
         }
         return route
     }
-    return rolePermiss.map(mapPermissions)
+    return rolePermiss.filter(i => i.type !== 3).map(mapPermissions)
 }
 
 export const isPermission = (code = '', permissions: Array<string> = []): boolean => permissions.includes(code)
