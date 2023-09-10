@@ -1,3 +1,9 @@
 <template>
-    <div class="-container"></div>
+    <div class="menu-management-container">
+
+    </div>
 </template>
+
+<script setup lang="ts">
+
+</script>

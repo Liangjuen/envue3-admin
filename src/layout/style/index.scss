@@ -10,4 +10,5 @@ html body #app>.app-wrapper>.main-wrapper .app-main>section>[class*=-container] 
     border-radius: var(--theme-border-radius);
     padding: var(--theme-padding);
     box-sizing: border-box;
+    overflow: hidden;
 }

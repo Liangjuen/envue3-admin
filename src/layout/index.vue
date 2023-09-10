@@ -8,7 +8,7 @@
                         <Aside v-if="themeStyle.menuMode == 'horizontal'" />
                     </template>
                 </Nav>
-                <Tabs />
+                <Tabs v-show="showTabbar" />
             </div>
             <div class="app-main">
                 <AppMain />
@@ -31,7 +31,7 @@ import { useGlobalStore } from './use'
 import { useResizeObserver } from '@vueuse/core'
 import useGlobal from '@/hooks/useGlobal'
 const { useGlobalStoreToRefs } = useGlobal()
-const { themeStyle } = useGlobalStoreToRefs()
+const { themeStyle, showTabbar } = useGlobalStoreToRefs()
 const appWrapperRef = ref<HTMLDivElement>()
 
 const { useMainWrapperClass, useOnWrapperResize } = useGlobalStore()
