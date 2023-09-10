@@ -39,36 +39,8 @@ const permission: Array<API.Permission> = [
         icon: 'menu',
         type: 2,
         hidden: 0,
-        permission: 'sys:sysManage:menu',
+        permission: 'sysManage:menu',
         component: 'sysmanage/menuManage'
-    },
-    {
-        id: 'bcde2',
-        pid: 'abcde',
-        title: '角色管理',
-        path: '/sysManage/roleManage',
-        name: 'RoleManage',
-        cache: 1,
-        sort: 1,
-        icon: 'user-check',
-        type: 2,
-        hidden: 0,
-        permission: 'sys:sysMenage:role',
-        component: 'sysmanage/roleManage'
-    },
-    {
-        id: 'bcde3',
-        pid: 'abcde',
-        title: '员工管理',
-        path: '/sysManage/staffManage',
-        name: 'StaffManage',
-        cache: 1,
-        sort: 1,
-        icon: 'users',
-        type: 2,
-        hidden: 0,
-        permission: 'sys:sysMenage:staff',
-        component: 'sysmanage/staffManage'
     },
     {
         id: 'cdef1',
@@ -81,7 +53,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysManage:menu:view',
+        permission: 'menu:view',
         component: ''
     },
     {
@@ -95,7 +67,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysManage:menu:add',
+        permission: 'menu:add',
         component: ''
     },
     {
@@ -109,7 +81,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysManage:menu:delete',
+        permission: 'menu:delete',
         component: ''
     },
     {
@@ -123,7 +95,147 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 3,
         hidden: 0,
-        permission: 'sys:sysManage:menu:edit',
+        permission: 'menu:edit',
+        component: ''
+    },
+    {
+        id: 'bcde2',
+        pid: 'abcde',
+        title: '角色管理',
+        path: '/sysManage/roleManage',
+        name: 'RoleManage',
+        cache: 1,
+        sort: 1,
+        icon: 'user-check',
+        type: 2,
+        hidden: 0,
+        permission: 'sysMenage:role',
+        component: 'sysmanage/roleManage'
+    },
+    {
+        id: 'defg1',
+        pid: 'bcde2',
+        title: '查看',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'role:view',
+        component: ''
+    },
+    {
+        id: 'defg2',
+        pid: 'bcde2',
+        title: '添加',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'role:add',
+        component: ''
+    },
+    {
+        id: 'defg3',
+        pid: 'bcde2',
+        title: '编辑',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'role:edit',
+        component: ''
+    },
+    {
+        id: 'defg4',
+        pid: 'bcde2',
+        title: '删除',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'role:delete',
+        component: ''
+    },
+    {
+        id: 'bcde3',
+        pid: 'abcde',
+        title: '员工管理',
+        path: '/sysManage/staffManage',
+        name: 'StaffManage',
+        cache: 1,
+        sort: 1,
+        icon: 'users',
+        type: 2,
+        hidden: 0,
+        permission: 'sysMenage:staff',
+        component: 'sysmanage/staffManage'
+    },
+    {
+        id: 'efgh1',
+        pid: 'bcde3',
+        title: '查看',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'staff:view',
+        component: ''
+    },
+    {
+        id: 'efgh2',
+        pid: 'bcde3',
+        title: '添加',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'staff:add',
+        component: ''
+    },
+    {
+        id: 'efgh3',
+        pid: 'bcde3',
+        title: '编辑',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'staff:edit',
+        component: ''
+    },
+    {
+        id: 'efgh4',
+        pid: 'bcde3',
+        title: '删除',
+        path: '',
+        name: '',
+        cache: 0,
+        sort: null,
+        icon: '',
+        type: 3,
+        hidden: 0,
+        permission: 'staff:delete',
         component: ''
     },
     {
@@ -153,7 +265,7 @@ const permission: Array<API.Permission> = [
         icon: 'image',
         type: 1,
         hidden: 0,
-        permission: 'sys:components:icons',
+        permission: 'components:icons',
         component: ''
     },
     {
@@ -167,7 +279,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 2,
         hidden: 0,
-        permission: 'sys:components:icons::list',
+        permission: 'icons:list',
         component: 'components/icon/list'
     },
     {
@@ -181,7 +293,7 @@ const permission: Array<API.Permission> = [
         icon: '',
         type: 2,
         hidden: 0,
-        permission: 'sys:components:icons::list',
+        permission: 'icons:list',
         component: 'components/icon/selector'
     },
 ]

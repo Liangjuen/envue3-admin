@@ -11,11 +11,14 @@ const modules = import.meta.glob('../views/**/**.vue')
 export const usePermissionStore = defineStore(Names.PERMISSTION, {
     state: () => ({
         routes: new Array<RouteRecordRaw>(),
-        permissions: new Array<API.RolePermiss>()
+        permissions: new Array<API.RolePermiss>(),
+        points: new Array<string>()
     }),
     actions: {
         getPermissions() {
             const permissions = getRolePermission()
+            // 将所有按钮权限过滤处理存储为 ['x:y'] 格式 x 为页面唯一标识，y为控制点(按钮权限)
+            this.points = permissions.filter(i => i.type == 3).map(p => p.permission)
             this.permissions = rolePermissionToTree(permissions)
         },
         getRoutes() {

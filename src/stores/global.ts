@@ -30,6 +30,8 @@ export default defineStore(Names.GLOBAL, () => {
     let loading = ref(false)
     // 主题配置
     let showSettings = ref(false)
+    // 显示Tabbar
+    let showTabbar = ref(false)
 
     return {
         themeStyle,
@@ -38,7 +40,8 @@ export default defineStore(Names.GLOBAL, () => {
         reload,
         loading,
         showSettings,
-        asideFloat
+        asideFloat,
+        showTabbar
     }
 }, {
     lasting: {

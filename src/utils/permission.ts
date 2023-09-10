@@ -48,3 +48,5 @@ export const getMenus = (rolePermiss: Array<API.RolePermiss> = []) => {
     }
     return rolePermiss.map(mapPermissions)
 }
+
+export const isPermission = (code = '', permissions: Array<string> = []): boolean => permissions.includes(code)
