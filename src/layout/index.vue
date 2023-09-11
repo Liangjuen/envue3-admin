@@ -1,7 +1,7 @@
 <template>
     <div class="app-wrapper" ref="appWrapperRef">
         <Aside v-if="themeStyle.menuMode == 'vertical'" />
-        <el-scrollbar :class="['main-wrapper', mainclass]">
+        <el-scrollbar :class="['main-wrapper', mainclass]" width="">
             <div class="layout-header fixed">
                 <Nav>
                     <template #left>
