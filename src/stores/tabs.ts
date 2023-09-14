@@ -73,7 +73,7 @@ export default defineStore(Names.TABS, () => {
     lasting: {
         enabled: true,
         strategies: {
-            storage: localStorage,
+            storage: sessionStorage,
             key: Names.TABS,
             exclude: []
         }

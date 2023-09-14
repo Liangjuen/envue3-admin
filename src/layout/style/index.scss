@@ -5,12 +5,16 @@ footer {
 }
 
 html body #app>.app-wrapper>.main-wrapper .app-main>section>[class*=-container] {
-    height: calc(100vh - 214px);
-    display: flex;
-    flex-direction: column;
-    background-color: var(--el-bg-color);
+    min-height: calc(100vh - 214px);
     border-radius: var(--theme-border-radius);
     padding: var(--theme-padding);
     box-sizing: border-box;
     overflow: hidden;
+}
+
+html body #app>.app-wrapper>.main-wrapper .app-main>section>.card {
+    height: calc(100vh - 214px);
+    background-color: var(--el-bg-color);
+    display: flex;
+    flex-direction: column;
 }

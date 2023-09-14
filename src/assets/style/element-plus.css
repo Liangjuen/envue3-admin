@@ -10,3 +10,15 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
 }
+
+html body .el-dialog {
+    --el-dialog-border-radius: var(--theme-border-radius);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 980px) {
+    html body .el-dialog {
+        width: auto !important;
+        margin: 5vw;
+    }
+}
