@@ -2,7 +2,7 @@
     <el-menu :class="[menuClass]" :mode="themeStyle.menuMode" :default-active="$route.fullPath" router
         :collapse="isCollapse" v-bind="backDark">
         <template v-for="item in menus" :key="item.path">
-            <sidebar-item :item-data="item" v-if="!item?.meta?.hidden"></sidebar-item>
+            <sidebar-item :item-data="item" v-if="!item?.hidden"></sidebar-item>
         </template>
     </el-menu>
 </template>
